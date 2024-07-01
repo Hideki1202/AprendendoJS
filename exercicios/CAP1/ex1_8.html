@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1_8</title>
+</head>
+<body>
+    <h1>Duração viagem em Horas</h1>
+    <form>
+        <label>Dias</label>
+        <input type="number" id="dias">
+        <br>
+        <label>Horas</label>
+        <input type="number" id="horas">
+
+        <input type="submit" value="calcular">
+    </form>
+
+    <div id="resultado"></div>
+</body>
+    <script>
+
+        const form = document.querySelector("form")
+        
+
+        form.addEventListener("submit", (e)=>{
+            const rest = document.getElementById("resultado")
+            const dias = Number(form.dias.value)
+            const horas = Number(form.horas.value)
+           
+            rest.innerText = "O total de horas foi " + ((dias*24)+ (horas)) + "horas"
+            e.preventDefault()
+            
+
+        })
+
+        
+        
+    </script>
+</html>

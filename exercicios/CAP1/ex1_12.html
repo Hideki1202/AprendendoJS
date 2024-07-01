@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1_12</title>
+</head>
+<body>
+    <h1>Média de notas</h1>
+    <form>
+        <label>Nota 1: </label>
+        <input type="number" id="nota1" max="10" min="0">
+        <br>
+        <label>Nota 2: </label>
+        <input type="number" id="nota2" max="10" min="0">
+
+        <input type="submit" value="calcular">
+    </form>
+
+    <div id="resultado"></div>
+</body>
+    <script>
+
+        const form = document.querySelector("form")
+        
+
+        form.addEventListener("submit", (e)=>{
+            const rest = document.getElementById("resultado")
+            const nota1 = Number(form.nota1.value)
+            const nota2 = Number(form.nota2.value)
+           
+            rest.innerHTML = "<h4>A Média dessas duas notas foi "+((nota1+nota2)/2).toFixed(1)+"</h4"
+            e.preventDefault()
+            
+
+        })
+
+        
+        
+    </script>
+</html>

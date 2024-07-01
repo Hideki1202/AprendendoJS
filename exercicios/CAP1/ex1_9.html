@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1_9</title>
+</head>
+<body>
+    <h1>Antecessor e Sucessor de um Número</h1>
+    <form>
+        <label>Digite um número: </label>
+            
+        <input type="number" id="numero">
+        <input type="submit" value="Mostrar">
+    </form>
+    <div id="sucessor"></div>
+    <div id="antecessor"></div>
+
+    <script>
+        const form = document.querySelector("form")
+        const sucessor = document.getElementById("sucessor")
+        const antecessor = document.getElementById("antecessor")
+        form.addEventListener("submit", (e)=>{
+            const num = Number(form.numero.value)
+            sucessor.innerHTML = "<h4>Sucessor: " + (num+1) +"</h4>" 
+            antecessor.innerHTML ="<h4>Antecessor: " + (num-1) +"</h4>" 
+            e.preventDefault()
+        })
+    </script>
+</body>
+</html>

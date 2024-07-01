@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1_7</title>
+</head>
+<body>
+    <h2>Cálculo valor do jantar</h2>
+
+        <form >
+            <label for="">Valor do jantar</label>
+            <input type="number" id="valorJantar" >
+            
+            <input type="submit" value="mostrar">
+
+        </form>
+        <div id="valorJanta">
+
+        </div>
+        <div id="valorGarçom">
+
+        </div>
+        <div id="valorTotal">
+            
+        </div>
+    
+    <script>
+        
+            const forms = document.querySelector("form")
+
+            const ElementoValorGarçom = document.getElementById("valorGarçom")
+            const ElementoValorTotal = document.getElementById("valorTotal")
+
+            const ElementoValorJantar = document.getElementById("valorJanta")
+            
+            
+
+            forms.addEventListener("submit", (e)=>{
+                const valor = Number(forms.valorJantar.value)
+                const taxaGarcom = valor * 0.10
+                const valorTotal = valor + taxaGarcom
+                ElementoValorJantar.innerText=`Valor da janta foi R$${valor.toFixed(2)}`
+                ElementoValorGarçom.innerText = `Valor da taxa do garçom foi $${taxaGarcom.toFixed(2)}`
+                
+                ElementoValorTotal.innerText = `Valor total a pagar: R$${valorTotal.toFixed(2)}`
+                e.preventDefault()
+            })
+
+            
+
+            
+        
+    </script>
+</body>
+</html>
